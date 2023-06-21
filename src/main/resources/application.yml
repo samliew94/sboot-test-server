@@ -1,0 +1,28 @@
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          datasource:
+            init: DEBUG
+server:
+  port: 80
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: pa
+    url: jdbc:h2:mem:testdb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true # hibernate creates table before exec data.sql
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+  jackson:
+    time-zone: GMT+8
